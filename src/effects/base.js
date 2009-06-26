@@ -142,6 +142,9 @@ s2.fx.Base = Class.create({
     if(options && options.queue && !s2.fx.getQueues().include(options.queue))
       s2.fx.addQueue(options.queue);
 
+    if(options && !options.transition)
+      options.transition = s2.fx.DefaultOptions.transition;
+
     this.setOptions(options);
     this.duration = this.options.duration*1000;
     this.state = 'idle';
